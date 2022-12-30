@@ -4,7 +4,7 @@ exports.connectDB = async()=>{
                   
   try {     
     mongoose.set("strictQuery", false);
-    await mongoose.connect(process.env.URI);
+    await mongoose.connect(process.env.MONGODB_CNN);
     console.log("conectado en la base de datos de mongoDB");
   } catch (error) {
        console.log(error);
