@@ -8,5 +8,6 @@ exports.connectDB = async()=>{
     console.log("conectado en la base de datos de mongoDB");
   } catch (error) {
        console.log(error);
+       throw new Error("no se conecto ala base de datos");
   }   
 }
