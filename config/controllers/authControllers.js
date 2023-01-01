@@ -12,7 +12,11 @@ exports.getUser = async(req = request,res = response)=>{
     try {
          
         const user = await MODEL_USER.findById(req.userId);
-       
+        if(req.userId   !== req.params.userId){
+            
+              return res.status(500).json({msg: "usuario no valido",logged: false});
+        }
+
         if(!user){
            return res.status(500).json({msg: "este usuario no existe"});
         }

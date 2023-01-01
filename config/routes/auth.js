@@ -7,7 +7,7 @@ const route = express.Router();
   
        
       
-route.get("/user",validateToken,getUser);       
+route.get("/user/:userId",validateToken,getUser);       
 route.post("/login",[
   check("email","escribe un email valido").isEmail(),
   check("password","escribe la contraseña").not().isEmpty(), 
